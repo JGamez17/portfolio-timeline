@@ -1,3 +1,4 @@
+import Projects from "@/components/sections/Projects";
 import Hero from "@/components/sections/Hero";
 import Timeline from "@/components/timeline/timeline"
 
@@ -11,6 +12,7 @@ export default function Home() {
           An interactive journey from user-space to kernel-space. Explore how compounding knowledge took me from my first code to engineering at the core of millions of devices.
           </p>
         </div>
+        <Projects />
         <Hero />
         <Timeline />
       </div>
