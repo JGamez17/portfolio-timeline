@@ -1,85 +1,57 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
-import TimelineEvent from "./timeline-event"
-import TimelineModal from "./timeline-modal"
-import { timelineData, type TimelineEventType } from "./timeline-data"
+import { motion } from "framer-motion"
+import { timelineData } from "./timeline-data"
 
 export default function Timeline() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
-  const [selectedEvent, setSelectedEvent] = useState<TimelineEventType | null>(null)
-  const scrollContainerRef = useRef<HTMLDivElement>(null)
-  const eventRefs = useRef<(HTMLDivElement | null)[]>([])
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!scrollContainerRef.current) return
-
-      const container = scrollContainerRef.current
-      const scrollPosition = container.scrollLeft + container.clientWidth / 2
-
-      // Find which event is closest to the center of the viewport
-      let closestIndex = 0
-      let closestDistance = Number.POSITIVE_INFINITY
-
-      eventRefs.current.forEach((ref, index) => {
-        if (!ref) return
-        const eventLeft = ref.offsetLeft + ref.clientWidth / 2
-        const distance = Math.abs(scrollPosition - eventLeft)
-
-        if (distance < closestDistance) {
-          closestDistance = distance
-          closestIndex = index
-        }
-      })
-
-      setActiveIndex(closestIndex)
-    }
-
-    const container = scrollContainerRef.current
-    if (container) {
-      container.addEventListener("scroll", handleScroll)
-      handleScroll() // Initial check
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener("scroll", handleScroll)
-      }
-    }
-  }, [])
-
   return (
-    <>
-      <div
-        ref={scrollContainerRef}
-        className="overflow-x-auto overflow-y-hidden pb-8 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent"
-      >
-        <div className="relative min-w-max px-8 md:px-16">
-          <div className="absolute left-0 right-0 top-16 h-0.5 bg-border" />
+    <section className="px-12 py-20 border-b border-white/[0.08]">
+      <p className="text-[11px] tracking-[0.16em] uppercase text-[#5F5E5A] mb-16">
+        Timeline
+      </p>
 
-          <div className="flex gap-8 md:gap-16 pt-8">
-            {timelineData.map((event, index) => (
-              <div
-                key={event.id}
-                ref={(el) => {
-                  eventRefs.current[index] = el
-                }}
-                className="flex-shrink-0"
-              >
-                <TimelineEvent
-                  event={event}
-                  index={index}
-                  isActive={activeIndex === index}
-                  onClick={() => setSelectedEvent(event)}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+      <div className="relative pl-6 border-l border-white/[0.08]">
+        {timelineData.map((event, index) => (
+          <motion.div
+            key={event.id}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.08 }}
+            className="relative mb-14 last:mb-0 pl-8"
+          >
+            {/* dot */}
+            <div className="absolute -left-[25px] top-[6px] w-[7px] h-[7px] rounded-full bg-[#5F5E5A]" />
+
+            <p className="text-[11px] tracking-[0.12em] uppercase text-[#5F5E5A] mb-2">
+              {event.year}
+            </p>
+
+            <h3 className="text-[16px] font-medium text-[#e8e6e0] mb-1">
+              {event.title}
+            </h3>
+
+            <p className="text-[13px] text-[#888780] mb-3">
+              {event.organization}
+            </p>
+
+            <p className="text-[13px] text-[#5F5E5A] leading-relaxed max-w-xl mb-4">
+              {event.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2">
+              {event.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="text-[10px] tracking-[0.08em] uppercase text-[#5F5E5A] border border-white/[0.07] px-2.5 py-1"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        ))}
       </div>
-
-      <TimelineModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
-    </>
+    </section>
   )
 }

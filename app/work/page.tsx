@@ -1,16 +1,12 @@
-
 import Nav from "@/components/sections/Nav"
-import Hero from "@/components/sections/Hero"
-import Timeline from "@/components/timeline/timeline"
+import LookBook from "@/components/sections/LookBook"
 import Footer from "@/components/sections/Footer"
 
-
-export default function Home() {
+export default function WorkPage() {
   return (
     <main className="min-h-screen bg-[#111110] text-[#e8e6e0]">
       <Nav />
-      <Hero />
-      <Timeline />
+      <LookBook />
       <Footer />
     </main>
   )
