@@ -40,12 +40,12 @@ export const timelineData: TimelineEventType[] = [
     icon: "",
     skills: [
       "Technical Troubleshooting & Root Cause Analysis",
-      "Systematic Debugging & Diagnostics", 
+      "Systematic Debugging & Diagnostics",
       "Cross-Functional Collaboration",
       "User-Centric Technical Translation",
       "iOS & Mobile Ecosystem Expertise",
       "Creative Problem-Solving"
-  ],
+    ],
     description:
       "Launched my technical career at Apple,inc. rapidly developing expertise in diagnosing and resolving complex hardware and software issues. Mastered the art of deconstructing user-reported problems into actionable technical solutions, laying a foundational skill set for software engineering focused on user empathy, systematic debugging, and delivering robust outcomes.",
     category: "career",
@@ -55,17 +55,17 @@ export const timelineData: TimelineEventType[] = [
     year: 2021,
     title: "Health Software - QA Engineer",
     organization: "Apple Inc.",
-    icon: "⚙️",
+    icon: "⚕️",
     skills: [
-      "System Architecture & Infrastructure Design",
-      "Low-Level Systems Engineering", 
-      "Cross-Functional Technical Leadership",
-      "Kernel & Operating Systems Development",
-      "Technical Strategy & Roadmap Planning",
+      "Python Test Automation",
+      "Clear, Actionable Bug Reports",
+      "Translating User Impact for Engineering",
+      "QA Processes & Test Planning",
+      "Defect Reproduction & Root Cause Analysis",
       "Engineering Partnership & Collaboration"
-  ],
+    ],
     description:
-    "Selected for a technical role with Health QA engineering teams, where I accelerated my Python skills and enterprise software knowledge through direct contribution to critical projects. Systematically identified and documented reproducible software defects, driving issue resolution through close collaboration with development teams. This hands-on experience with test automation, QA processes, and engineering collaboration on infrastructure scaling to millions of devices provided comprehensive exposure to professional software engineering practices.",
+      "Selected for a technical role with Health QA engineering teams, where I accelerated my Python skills and enterprise software knowledge through direct contribution to critical projects. Systematically identified and documented reproducible software defects, driving issue resolution through close collaboration with development teams. This hands-on experience with test automation, QA processes, and engineering collaboration on infrastructure scaling to millions of devices provided comprehensive exposure to professional software engineering practices.",
     category: "career",
   },
   {
@@ -76,36 +76,55 @@ export const timelineData: TimelineEventType[] = [
     icon: "💻",
     skills: [
       "Full-Stack Engineering",
-      "React & Modern JavaScript", 
+      "React & Modern JavaScript",
       "Ruby on Rails API Development",
       "RESTful API Design & Integration",
       "Relational Database Architecture (SQL)",
       "Version Control (Git) & Agile Workflows"
-  ],
+    ],
     description:
-   "Accelerated my transition into software engineering through an intensive, project-driven curriculum focused on building scalable full-stack applications. Engineered and deployed multiple production-ready web applications, mastering modern development frameworks and establishing a robust foundation in software engineering principles and best practices.",
+      "Accelerated my transition into software engineering through an intensive, project-driven curriculum focused on building scalable full-stack applications. Engineered and deployed multiple production-ready web applications, mastering modern development frameworks and establishing a robust foundation in software engineering principles and best practices.",
     category: "achievement",
   },
   {
     id: "6",
     year: 2023,
     title: "Software Engineer - CoreOS Team",
-    organization: "Apple Inc.",
+    organization: "Apple, Inc.",
     icon: "⚙️",
     skills: [
       "System Architecture & Infrastructure Design",
       "Low-Level Systems Engineering",
       "Objective-C & iOS Development",
       "Enterprise Security Models",
-      "Python", 
+      "Python",
       "SDC & Internal Tools",
       "Unit Testing & Test Automation",
       "Git & Code Review",
       "Cross-Functional Technical Leadership",
       "Technical Strategy & Planning"
-  ],
+    ],
     description:
-   "Partnered with cross-functional teams to design test strategies and author 60+ test cases for major features. Gained a deep, practical understanding of feature development and system architecture by analyzing the existing Objective-C codebase. Accelerated my knowledge of low-level systems, enterprise security models, and robust engineering practices by performing code reviews, mastering advanced Git concepts, and contributing to internal tools and unit testing frameworks within a large-scale SDC environment.",
+      "Partnered with cross-functional teams to design test strategies and author 60+ test cases for major features. Gained a deep, practical understanding of feature development and system architecture by analyzing the existing Objective-C codebase. Accelerated my knowledge of low-level systems, enterprise security models, and robust engineering practices by performing code reviews, mastering advanced Git concepts, and contributing to internal tools and unit testing frameworks within a large-scale SDC environment.",
+    category: "career",
+  },
+  {
+    id: "7",
+    year: 2025,
+    title: "Full-Stack Engineer, SkillHat Tech Career Accelerator",
+    organization: "SkillHat",
+    icon: "⚙️",
+    skills: [
+      "System Architecture & Infrastructure Design",
+      "End-to-End Ownership",
+      "Cross-Functional Collaboration",
+      "Unit Testing & Test Automation",
+      "Git & Code Review",
+      "Product Pivot (Web → Mobile)",
+      "Technical Strategy & Planning"
+    ],
+    description:
+      "Joined a cross-functional product team in a 9-week accelerator to build PlayGuard, an age-rating advisor proof of concept. Partnered with the team’s PM and UX designer, took complete ownership of the build, and led a fast pivot from web app to mobile app.",
     category: "career",
   },
 ]
